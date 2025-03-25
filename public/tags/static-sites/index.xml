@@ -13,8 +13,7 @@
       <link>http://localhost:1313/posts/first-post/</link>
       <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/first-post/</guid>
-      <description>&lt;h1 id=&#34;getting-started-with-hugo&#34;&gt;Getting Started with Hugo&lt;/h1&gt;
-&lt;p&gt;Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.&lt;/p&gt;
+      <description>&lt;p&gt;Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.&lt;/p&gt;
 &lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;
 &lt;p&gt;There are several reasons to choose Hugo for your next project:&lt;/p&gt;
 &lt;ol&gt;

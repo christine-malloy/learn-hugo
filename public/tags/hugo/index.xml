@@ -13,8 +13,7 @@
       <link>http://localhost:1313/posts/second-post/</link>
       <pubDate>Tue, 25 Mar 2025 00:06:15 -0400</pubDate>
       <guid>http://localhost:1313/posts/second-post/</guid>
-      <description>&lt;h1 id=&#34;customizing-your-hugo-theme&#34;&gt;Customizing Your Hugo Theme&lt;/h1&gt;
-&lt;p&gt;Once you have chosen a theme for your Hugo site, you&amp;rsquo;ll likely want to customize it to match your brand or personal style. This post covers the basics of theme customization.&lt;/p&gt;
+      <description>&lt;p&gt;Once you have chosen a theme for your Hugo site, you&amp;rsquo;ll likely want to customize it to match your brand or personal style. This post covers the basics of theme customization.&lt;/p&gt;
 &lt;h2 id=&#34;understanding-theme-structure&#34;&gt;Understanding Theme Structure&lt;/h2&gt;
 &lt;p&gt;Before making changes, it&amp;rsquo;s important to understand the structure of Hugo themes:&lt;/p&gt;
 &lt;ul&gt;
@@ -31,8 +30,7 @@
       <link>http://localhost:1313/posts/first-post/</link>
       <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/first-post/</guid>
-      <description>&lt;h1 id=&#34;getting-started-with-hugo&#34;&gt;Getting Started with Hugo&lt;/h1&gt;
-&lt;p&gt;Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.&lt;/p&gt;
+      <description>&lt;p&gt;Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.&lt;/p&gt;
 &lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;
 &lt;p&gt;There are several reasons to choose Hugo for your next project:&lt;/p&gt;
 &lt;ol&gt;

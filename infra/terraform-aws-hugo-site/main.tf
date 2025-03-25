@@ -1,6 +1,6 @@
 locals {
   domain = {
-    hostname         = "${module.this.id}-${random_string.signifier.result}.com"
+    hostname         = "${module.this.id}-${random_string.signifier.result}"
   }
 
   website = {
@@ -21,6 +21,8 @@ locals {
     standard_transition_days = var.logs_standard_transition_days
     glacier_transition_days  = var.logs_glacier_transition_days
   }
+
+  force_destroy = true
 }
 
 resource "random_string" "signifier" {
@@ -50,6 +52,8 @@ module "s3_website" {
   logs_expiration_days          = local.logs.expiration_days
   logs_standard_transition_days = local.logs.standard_transition_days
   logs_glacier_transition_days  = local.logs.glacier_transition_days
+
+  force_destroy = local.force_destroy
 
   tags = module.this.tags
 }

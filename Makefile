@@ -1,4 +1,4 @@
-.PHONY: server build clean mod
+.PHONY: server build clean mod deploy
 
 # Start the Hugo server with draft content included
 server:
@@ -11,6 +11,9 @@ build-dev:
 # Build the site for production (no drafts)
 build-prod:
 	hugo
+
+deploy:
+	hugo deploy
 
 # Clean the build directory
 clean:

@@ -1,7 +1,12 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://learn-hugo.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'PaperMod'
+
+[deployment]
+  [[deployment.targets]]
+    name = 'dev'
+    url = 's3://gm-dev-hugo-learn-td76c/?region=us-east-1'
 
 # Enable main menu
 [menu]

@@ -11,7 +11,7 @@
     <item>
       <title>Software</title>
       <link>http://localhost:1313/categories/software/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 25 Mar 2025 00:22:30 -0400</pubDate>
       <guid>http://localhost:1313/categories/software/</guid>
       <description></description>
     </item>
@@ -20,13 +20,6 @@
       <link>http://localhost:1313/categories/tutorials/</link>
       <pubDate>Tue, 25 Mar 2025 00:06:15 -0400</pubDate>
       <guid>http://localhost:1313/categories/tutorials/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Technology</title>
-      <link>http://localhost:1313/categories/technology/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/technology/</guid>
       <description></description>
     </item>
   </channel>
