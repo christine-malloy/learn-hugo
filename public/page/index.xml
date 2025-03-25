@@ -58,5 +58,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;follow-us&#34;&gt;Follow Us&lt;/h2&gt;
 &lt;p&gt;Stay connected with us on social media:&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Understanding Hugo Render Hooks</title>
+      <link>http://localhost:1313/page/render-hooks/</link>
+      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/page/render-hooks/</guid>
+      <description>Learn about Hugo&amp;#39;s powerful render hooks feature and how to customize content rendering</description>
+    </item>
   </channel>
 </rss>

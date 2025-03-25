@@ -26,6 +26,11 @@ theme = 'PaperMod'
     url = "/page/projects/"
     weight = 3
   [[menu.main]]
+    identifier = "render-hooks"
+    name = "Render Hooks"
+    url = "/page/render-hooks/"
+    weight = 3.5
+  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"

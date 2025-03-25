@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Web Development on My New Hugo Site</title>
-    <link>http://localhost:1313/tags/web-development/</link>
+    <link>http://localhost:45925/tags/web-development/</link>
     <description>Recent content in Web Development on My New Hugo Site</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 May 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45925/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Hugo</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <link>http://localhost:45925/posts/first-post/</link>
       <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/first-post/</guid>
+      <guid>http://localhost:45925/posts/first-post/</guid>
       <description>&lt;p&gt;Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.&lt;/p&gt;
 &lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;
 &lt;p&gt;There are several reasons to choose Hugo for your next project:&lt;/p&gt;

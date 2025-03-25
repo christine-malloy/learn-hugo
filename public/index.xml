@@ -104,6 +104,13 @@
 &lt;p&gt;Here are some ways to customize your theme without modifying the theme files directly:&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Understanding Hugo Render Hooks</title>
+      <link>http://localhost:1313/page/render-hooks/</link>
+      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/page/render-hooks/</guid>
+      <description>Learn about Hugo&amp;#39;s powerful render hooks feature and how to customize content rendering</description>
+    </item>
+    <item>
       <title>About Us</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
