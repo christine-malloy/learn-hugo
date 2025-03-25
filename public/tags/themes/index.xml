@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Themes on My New Hugo Site</title>
+    <link>http://localhost:1313/tags/themes/</link>
+    <description>Recent content in Themes on My New Hugo Site</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Mar 2025 00:06:15 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/themes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Customizing Your Hugo Theme</title>
+      <link>http://localhost:1313/posts/second-post/</link>
+      <pubDate>Tue, 25 Mar 2025 00:06:15 -0400</pubDate>
+      <guid>http://localhost:1313/posts/second-post/</guid>
+      <description>&lt;h1 id=&#34;customizing-your-hugo-theme&#34;&gt;Customizing Your Hugo Theme&lt;/h1&gt;
+&lt;p&gt;Once you have chosen a theme for your Hugo site, you&amp;rsquo;ll likely want to customize it to match your brand or personal style. This post covers the basics of theme customization.&lt;/p&gt;
+&lt;h2 id=&#34;understanding-theme-structure&#34;&gt;Understanding Theme Structure&lt;/h2&gt;
+&lt;p&gt;Before making changes, it&amp;rsquo;s important to understand the structure of Hugo themes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;layouts&lt;/strong&gt;: Contains HTML templates&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;static&lt;/strong&gt;: Contains CSS, JavaScript, and images&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;assets&lt;/strong&gt;: Contains files that need processing (like SCSS)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;archetypes&lt;/strong&gt;: Contains content templates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;simple-customization-methods&#34;&gt;Simple Customization Methods&lt;/h2&gt;
+&lt;p&gt;Here are some ways to customize your theme without modifying the theme files directly:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
