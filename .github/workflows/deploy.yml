@@ -79,7 +79,7 @@ jobs:
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: |
           terraform apply \
-            -var-file="environments/${{ env.ENVIRONMENT }}/terraform.tfvars" \
+            -var-file="env/${{ env.ENVIRONMENT }}/terraform.tfvars" \
             -auto-approve
 
       - name: Get S3 Bucket Name
