@@ -62,11 +62,18 @@ jobs:
             -backend-config="key=${{ env.ENVIRONMENT }}/terraform.tfstate" \
             -backend-config="region=${{ env.AWS_REGION || 'us-east-1' }}"
 
-      - name: Terraform Workspace Select
+      - name: Terraform Workspace
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: |
           WORKSPACE=$(basename $(pwd))
-          terraform workspace select $WORKSPACE
+          # Check if workspace exists, create it if it doesn't
+          if ! terraform workspace list | grep -q "$WORKSPACE"; then
+            echo "Creating new workspace: $WORKSPACE"
+            terraform workspace new $WORKSPACE
+          else
+            echo "Selecting existing workspace: $WORKSPACE"
+            terraform workspace select $WORKSPACE
+          fi
 
       - name: Terraform Apply
         working-directory: ${{ env.TF_WORKING_DIR }}
