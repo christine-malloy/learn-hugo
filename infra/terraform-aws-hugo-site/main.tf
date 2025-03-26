@@ -1,6 +1,6 @@
 locals {
   domain = {
-    hostname         = "${module.this.id}-${random_string.signifier.result}"
+    hostname = "${module.this.id}-${random_string.signifier.result}"
   }
 
   website = {
@@ -54,7 +54,7 @@ module "s3_website" {
   logs_glacier_transition_days  = local.logs.glacier_transition_days
 
   deployment_arns = {
-    "arn:aws:s3:::${module.this.id}" = ["/*"]
+    data.aws_iam_user.deployer.arn = ["/*"]
   }
 
   force_destroy = local.force_destroy
