@@ -13,10 +13,10 @@ build-prod:
 	hugo --minify
 
 deploy-dev:
-	hugo deploy --target dev
+	hugo deploy --target dev --invalidateCDN --force
 
 deploy-prod:
-	hugo deploy --target production --maxDeletes -1 --confirm
+	hugo deploy --target production --maxDeletes -1 --confirm --invalidateCDN --force
 
 # Clean the build directory
 clean:
