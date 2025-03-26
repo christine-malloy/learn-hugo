@@ -75,12 +75,19 @@ jobs:
             terraform workspace select $WORKSPACE
           fi
 
-      - name: Terraform Apply
+      - name: Terraform Destroy
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: |
-          terraform apply \
+          terraform destroy \
             -var-file="env/${{ env.ENVIRONMENT }}/terraform.tfvars" \
             -auto-approve
+
+      # - name: Terraform Apply
+      #   working-directory: ${{ env.TF_WORKING_DIR }}
+      #   run: |
+      #     terraform apply \
+      #       -var-file="env/${{ env.ENVIRONMENT }}/terraform.tfvars" \
+      #       -auto-approve
 
       - name: Get S3 Bucket Name
         id: bucket
