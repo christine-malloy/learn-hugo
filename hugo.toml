@@ -3,9 +3,13 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'PaperMod'
 
+#TODO - see how we can dynamically pull in s3 bucket names
 [deployment]
   [[deployment.targets]]
     name = 'dev'
+    url = 's3://gm-dev-hugo-learn-td76c/?region=us-east-1'
+  [[deployment.targets]]
+    name = 'prod'
     url = 's3://gm-dev-hugo-learn-td76c/?region=us-east-1'
 
 # Enable main menu

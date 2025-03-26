@@ -10,10 +10,13 @@ build-dev:
 
 # Build the site for production (no drafts)
 build-prod:
-	hugo
+	hugo --minify
 
-deploy:
-	hugo deploy
+deploy-dev:
+	hugo deploy --target dev
+
+deploy-prod:
+	hugo deploy --target production --maxDeletes -1 --confirm
 
 # Clean the build directory
 clean:
