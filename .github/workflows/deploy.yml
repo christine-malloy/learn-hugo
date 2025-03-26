@@ -59,7 +59,7 @@ jobs:
         run: |
           terraform init \
             -backend-config="bucket=${{ secrets.TF_STATE_BUCKET }}" \
-            -backend-config="key=${{ env.ENVIRONMENT }}/terraform.tfstate" \
+            -backend-config="key=terraform.tfstate" \
             -backend-config="region=${{ env.AWS_REGION || 'us-east-1' }}"
 
       - name: Terraform Workspace
@@ -75,19 +75,12 @@ jobs:
             terraform workspace select $WORKSPACE
           fi
 
-      - name: Terraform Destroy
+      - name: Terraform Apply
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: |
-          terraform destroy \
+          terraform apply \
             -var-file="env/${{ env.ENVIRONMENT }}/terraform.tfvars" \
             -auto-approve
-
-      # - name: Terraform Apply
-      #   working-directory: ${{ env.TF_WORKING_DIR }}
-      #   run: |
-      #     terraform apply \
-      #       -var-file="env/${{ env.ENVIRONMENT }}/terraform.tfvars" \
-      #       -auto-approve
 
       - name: Get S3 Bucket Name
         id: bucket
