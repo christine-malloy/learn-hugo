@@ -73,5 +73,4 @@ variable "logs_glacier_transition_days" {
 variable "deployer_username" {
   description = "The username of the deployer"
   type        = string
-  default     = "deployer"
 }
