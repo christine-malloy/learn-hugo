@@ -69,11 +69,3 @@ output "context_id" {
 output "context_name" {
   value = module.this.name
 }
-
-output "s3_bucket_name" {
-  value = module.s3_website.s3_bucket_name
-}
-
-output "s3_bucket_arn" {
-  value = module.s3_website.s3_bucket_arn
-}
