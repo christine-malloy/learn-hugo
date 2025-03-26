@@ -54,7 +54,7 @@ module "s3_website" {
   logs_glacier_transition_days  = local.logs.glacier_transition_days
 
   deployment_arns = {
-    data.aws_iam_user.deployer.arn = ["/*"]
+    (data.aws_iam_user.deployer.arn) = ["/*"]
   }
 
   force_destroy = local.force_destroy
