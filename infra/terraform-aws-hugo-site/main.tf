@@ -53,7 +53,27 @@ module "s3_website" {
   logs_standard_transition_days = local.logs.standard_transition_days
   logs_glacier_transition_days  = local.logs.glacier_transition_days
 
+  deployment_arns = {
+    "arn:aws:s3:::${module.this.id}/*" = ["/*"]
+  }
+
   force_destroy = local.force_destroy
 
   tags = module.this.tags
+}
+
+output "context_id" {
+  value = module.this.id
+}
+
+output "context_name" {
+  value = module.this.name
+}
+
+output "s3_bucket_name" {
+  value = module.s3_website.s3_bucket_name
+}
+
+output "s3_bucket_arn" {
+  value = module.s3_website.s3_bucket_arn
 }
