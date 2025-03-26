@@ -25,6 +25,7 @@ jobs:
       TERRAFORM_VERSION: '1.5.7'
       AWS_REGION: 'us-east-1'
       S3_BUCKET: 'greenmonkey-hugotest'
+      CLOUDFRONT_DISTRIBUTION_ID: ''
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -83,7 +84,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./public/ s3://${{ env.S3_BUCKET }} --delete
+          make deploy-${{ env.ENVIRONMENT }}
 
       - name: Get CloudFront Distribution ID
         id: cloudfront
