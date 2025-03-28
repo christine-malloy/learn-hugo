@@ -1,16 +1,7 @@
-baseURL = 'https://gm-test-learn-hugo.s3-website.us-east-2.amazonaws.com/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'PaperMod'
-
-#TODO - see how we can dynamically pull in s3 bucket names
-[deployment]
-  [[deployment.targets]]
-    name = 'dev'
-    url = 's3://gm-test-learn-hugo/?region=us-east-2'
-  [[deployment.targets]]
-    name = 'prod'
-    url = 's3://gm-test-learn-hugo/?region=us-east-2'
 
 # Enable main menu
 [menu]
