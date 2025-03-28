@@ -2,73 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/page/projects/</loc>
+    <loc>/page/projects/</loc>
     <lastmod>2025-03-25T00:25:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/page/</loc>
+    <loc>/page/</loc>
     <lastmod>2025-03-25T00:25:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2025-03-25T00:22:30-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/project-two/</loc>
+    <loc>/projects/project-two/</loc>
     <lastmod>2025-03-25T00:22:30-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/environment/</loc>
+    <loc>/tags/environment/</loc>
     <lastmod>2025-03-25T00:22:30-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mobile-app/</loc>
+    <loc>/tags/mobile-app/</loc>
     <lastmod>2025-03-25T00:22:30-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>/projects/</loc>
     <lastmod>2025-03-25T00:22:30-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/software/</loc>
+    <loc>/categories/software/</loc>
     <lastmod>2025-03-25T00:22:30-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sustainability/</loc>
+    <loc>/tags/sustainability/</loc>
     <lastmod>2025-03-25T00:22:30-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2025-03-25T00:22:30-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/page/contact/</loc>
+    <loc>/page/contact/</loc>
     <lastmod>2025-03-25T00:06:22-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/customization/</loc>
+    <loc>/tags/customization/</loc>
     <lastmod>2025-03-25T00:06:15-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/second-post/</loc>
+    <loc>/posts/second-post/</loc>
     <lastmod>2025-03-25T00:06:15-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
+    <loc>/tags/hugo/</loc>
     <lastmod>2025-03-25T00:06:15-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2025-03-25T00:06:15-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/themes/</loc>
+    <loc>/tags/themes/</loc>
     <lastmod>2025-03-25T00:06:15-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/tutorials/</loc>
+    <loc>/categories/tutorials/</loc>
     <lastmod>2025-03-25T00:06:15-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/page/render-hooks/</loc>
+    <loc>/page/render-hooks/</loc>
     <lastmod>2024-03-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2023-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/first-post/</loc>
+    <loc>/posts/first-post/</loc>
     <lastmod>2023-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/static-sites/</loc>
+    <loc>/tags/static-sites/</loc>
     <lastmod>2023-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/web-development/</loc>
+    <loc>/tags/web-development/</loc>
     <lastmod>2023-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2023-05-10T00:00:00+00:00</lastmod>
   </url>
 </urlset>
