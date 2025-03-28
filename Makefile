@@ -62,16 +62,16 @@ tf-validate:
 
 tf-init:
 	$(call setup_terraform_workspace) && \
-	terraform init -upgrade -var-file=env/dev/default.tfvars -var-file=env/dev/website.tfvars
+	terraform init -upgrade -var-file=env/dev/default.tfvars -var-file=env/dev/amplify.tfvars
 
 tf-plan:
 	$(call setup_terraform_workspace) && \
-	terraform plan -var-file=env/dev/default.tfvars -var-file=env/dev/website.tfvars
+	terraform plan -var-file=env/dev/default.tfvars -var-file=env/dev/amplify.tfvars
 
 tf-apply:
 	$(call setup_terraform_workspace) && \
-	terraform apply --auto-approve -var-file=env/dev/default.tfvars -var-file=env/dev/website.tfvars
+	terraform apply --auto-approve -var-file=env/dev/default.tfvars -var-file=env/dev/amplify.tfvars
 
 tf-destroy:
 	$(call setup_terraform_workspace) && \
-	terraform destroy --auto-approve -var-file=env/dev/default.tfvars -var-file=env/dev/website.tfvars
+	terraform destroy --auto-approve -var-file=env/dev/default.tfvars -var-file=env/dev/amplify.tfvars

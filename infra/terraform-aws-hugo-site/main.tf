@@ -1,72 +1,37 @@
-locals {
-  lifecycle_configuration_rules = [{
-    enabled = true # bool
-    id      = "lcr"
-
-    abort_incomplete_multipart_upload_days = 1 # number
-
-    filter_and = null
-    expiration = {
-      days = 120 # integer > 0
-    }
-    noncurrent_version_expiration = {
-      newer_noncurrent_versions = 3  # integer > 0
-      noncurrent_days           = 60 # integer >= 0
-    }
-    transition = [{
-      days          = 30            # integer >= 0
-      storage_class = "STANDARD_IA" # string/enum, one of GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
-      },
-      {
-        days          = 60           # integer >= 0
-        storage_class = "ONEZONE_IA" # string/enum, one of GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
-    }]
-    noncurrent_version_transition = [{
-      newer_noncurrent_versions = 3            # integer >= 0
-      noncurrent_days           = 30           # integer >= 0
-      storage_class             = "ONEZONE_IA" # string/enum, one of GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
-    }]
-  }]
+data "aws_ssm_parameter" "github_pat" {
+  name            = var.github_personal_access_token_secret_path
+  with_decryption = true
 }
 
-module "s3_bucket" {
-  source  = "cloudposse/s3-bucket/aws"
-  version = "4.10.0"
+locals {
+  domains    = {}
+  build_spec = file("${path.module}/../../amplify.yml")
+}
 
-  user_enabled                  = var.user_enabled
-  acl                           = var.acl
-  force_destroy                 = var.force_destroy
-  grants                        = var.grants
-  lifecycle_rules               = var.lifecycle_rules
-  lifecycle_configuration_rules = var.lifecycle_configuration_rules
-  versioning_enabled            = var.versioning_enabled
-  allow_encrypted_uploads_only  = var.allow_encrypted_uploads_only
-  allowed_bucket_actions        = var.allowed_bucket_actions
-  bucket_name                   = var.bucket_name
-  object_lock_configuration     = var.object_lock_configuration
-  s3_replication_enabled        = local.s3_replication_enabled
-  s3_replica_bucket_arn         = ""
-  s3_replication_rules          = local.s3_replication_rules
-  privileged_principal_actions  = var.privileged_principal_actions
-  privileged_principal_arns     = local.privileged_principal_arns
-  transfer_acceleration_enabled = var.transfer_acceleration_enabled
-  bucket_key_enabled            = var.bucket_key_enabled
-  source_policy_documents       = var.source_policy_documents
-  sse_algorithm                 = var.sse_algorithm
-  kms_master_key_arn            = var.kms_master_key_arn
-  block_public_acls             = var.block_public_acls
-  block_public_policy           = var.block_public_policy
-  ignore_public_acls            = var.ignore_public_acls
-  restrict_public_buckets       = var.restrict_public_buckets
-  minimum_tls_version           = var.minimum_tls_version
+module "amplify_app" {
+  source = "cloudposse/amplify-app/aws"
 
-  access_key_enabled      = var.access_key_enabled
-  store_access_key_in_ssm = var.store_access_key_in_ssm
-  ssm_base_path           = "/${module.this.id}"
-
-  website_configuration            = var.website_configuration
-  cors_configuration               = var.cors_configuration
-  website_redirect_all_requests_to = var.website_redirect_all_requests_to
+  access_token                  = data.aws_ssm_parameter.github_pat.value
+  description                   = var.description
+  repository                    = var.repository
+  platform                      = var.platform
+  oauth_token                   = var.oauth_token
+  auto_branch_creation_config   = var.auto_branch_creation_config
+  auto_branch_creation_patterns = var.auto_branch_creation_patterns
+  basic_auth_credentials        = var.basic_auth_credentials
+  build_spec                    = var.build_spec
+  enable_auto_branch_creation   = var.enable_auto_branch_creation
+  enable_basic_auth             = var.enable_basic_auth
+  enable_branch_auto_build      = var.enable_branch_auto_build
+  enable_branch_auto_deletion   = var.enable_branch_auto_deletion
+  environment_variables         = var.environment_variables
+  custom_rules                  = var.custom_rules
+  custom_headers                = var.custom_headers
+  iam_service_role_enabled      = var.iam_service_role_enabled
+  iam_service_role_arn          = var.iam_service_role_arn
+  iam_service_role_actions      = var.iam_service_role_actions
+  environments                  = var.environments
+  domains                       = local.domains
 
   context = module.this.context
 }

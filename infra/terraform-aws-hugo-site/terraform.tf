@@ -1,6 +1,7 @@
 # common config
 locals {
   account_id = data.aws_caller_identity.current.account_id
+  region     = coalesce(var.region, data.aws_region.current.name)
 }
 
 terraform {
@@ -9,11 +10,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.9.0"
-    }
-    time = {
-      source  = "hashicorp/time"
-      version = ">= 0.7"
+      version = ">= 4.0"
     }
     awsutils = {
       source  = "cloudposse/awsutils"
@@ -31,6 +28,8 @@ provider "awsutils" {
 }
 
 data "aws_caller_identity" "current" {}
+
+data "aws_region" "current" {}
 
 variable "region" {
   type        = string
