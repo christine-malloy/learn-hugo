@@ -1,9 +1,9 @@
-+++
-title = "Our Projects"
-date = 2025-03-25T00:25:00-04:00
-draft = false
-layout = "projects"
-+++
+---
+title: "Our Projects"
+date: 2025-03-25T00:25:00-04:00
+draft: false
+layout: "projects"
+---
 
 Welcome to our projects section. Here you'll find a showcase of our work and ongoing initiatives.
 

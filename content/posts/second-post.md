@@ -1,10 +1,10 @@
-+++
-title = "Customizing Your Hugo Theme"
-date = '2025-03-25T00:06:15-04:00'
-draft = false
-tags = ["hugo", "themes", "customization"]
-categories = ["tutorials"]
-+++
+---
+title: "Customizing Your Hugo Theme"
+date: '2025-03-25T00:06:15-04:00'
+draft: false
+tags: ["hugo", "themes", "customization"]
+categories: ["tutorials"]
+---
 
 Once you have chosen a theme for your Hugo site, you'll likely want to customize it to match your brand or personal style. This post covers the basics of theme customization.
 

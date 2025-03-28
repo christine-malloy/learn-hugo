@@ -1,9 +1,9 @@
-+++
-date = '2025-03-25T00:06:22-04:00'
-draft = false
-title = 'Contact Us'
-layout = 'contact'
-+++
+---
+date: '2025-03-25T00:06:22-04:00'
+draft: false
+title: 'Contact Us'
+layout: 'contact'
+---
 
 We'd love to hear from you! Use any of the methods below to reach out.
 

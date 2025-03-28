@@ -1,10 +1,10 @@
-+++
-title = "Eco-Friendly Mobile App"
-date = 2025-03-25T00:22:30-04:00
-draft = false
-tags = ["mobile-app", "environment", "sustainability"]
-categories = ["software"]
-+++
+---
+title: "Eco-Friendly Mobile App"
+date: 2025-03-25T00:22:30-04:00
+draft: false
+tags: ["mobile-app", "environment", "sustainability"]
+categories: ["software"]
+---
 
 # Eco-Friendly Mobile Application
 
