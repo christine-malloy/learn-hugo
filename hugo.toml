@@ -1,4 +1,4 @@
-baseURL = 'https://gm-dev-hugo-learn-td76c.s3.us-east-1.amazonaws.com/'
+baseURL = 'https://gm-test-learn-hugo.s3-website.us-east-2.amazonaws.com/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'PaperMod'
@@ -7,10 +7,10 @@ theme = 'PaperMod'
 [deployment]
   [[deployment.targets]]
     name = 'dev'
-    url = 's3://gm-dev-hugo-learn-td76c/?region=us-east-1'
+    url = 's3://gm-test-learn-hugo/?region=us-east-2'
   [[deployment.targets]]
     name = 'prod'
-    url = 's3://gm-dev-hugo-learn-td76c/?region=us-east-1'
+    url = 's3://gm-test-learn-hugo/?region=us-east-2'
 
 # Enable main menu
 [menu]

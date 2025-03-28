@@ -1,71 +1,72 @@
 locals {
-  domain = {
-    hostname = "${module.this.id}-${random_string.signifier.result}"
-  }
+  lifecycle_configuration_rules = [{
+    enabled = true # bool
+    id      = "lcr"
 
-  website = {
-    versioning_enabled = true
-    index_document     = "index.html"
-    error_document     = "error.html"
-  }
+    abort_incomplete_multipart_upload_days = 1 # number
 
-  cors = {
-    allowed_headers = ["*"]
-    allowed_methods = ["GET"]
-    allowed_origins = ["*"]
-    max_age_seconds = 3600
-  }
-
-  logs = {
-    expiration_days          = var.logs_expiration_days
-    standard_transition_days = var.logs_standard_transition_days
-    glacier_transition_days  = var.logs_glacier_transition_days
-  }
-
-  force_destroy = true
+    filter_and = null
+    expiration = {
+      days = 120 # integer > 0
+    }
+    noncurrent_version_expiration = {
+      newer_noncurrent_versions = 3  # integer > 0
+      noncurrent_days           = 60 # integer >= 0
+    }
+    transition = [{
+      days          = 30            # integer >= 0
+      storage_class = "STANDARD_IA" # string/enum, one of GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
+      },
+      {
+        days          = 60           # integer >= 0
+        storage_class = "ONEZONE_IA" # string/enum, one of GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
+    }]
+    noncurrent_version_transition = [{
+      newer_noncurrent_versions = 3            # integer >= 0
+      noncurrent_days           = 30           # integer >= 0
+      storage_class             = "ONEZONE_IA" # string/enum, one of GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
+    }]
+  }]
 }
 
-resource "random_string" "signifier" {
-  length  = 5
-  special = false
-  upper   = false
-}
+module "s3_bucket" {
+  source  = "cloudposse/s3-bucket/aws"
+  version = "4.10.0"
 
-module "s3_website" {
-  source  = "cloudposse/s3-website/aws"
-  version = "0.18.0"
+  user_enabled                  = var.user_enabled
+  acl                           = var.acl
+  force_destroy                 = var.force_destroy
+  grants                        = var.grants
+  lifecycle_rules               = var.lifecycle_rules
+  lifecycle_configuration_rules = var.lifecycle_configuration_rules
+  versioning_enabled            = var.versioning_enabled
+  allow_encrypted_uploads_only  = var.allow_encrypted_uploads_only
+  allowed_bucket_actions        = var.allowed_bucket_actions
+  bucket_name                   = var.bucket_name
+  object_lock_configuration     = var.object_lock_configuration
+  s3_replication_enabled        = local.s3_replication_enabled
+  s3_replica_bucket_arn         = ""
+  s3_replication_rules          = local.s3_replication_rules
+  privileged_principal_actions  = var.privileged_principal_actions
+  privileged_principal_arns     = local.privileged_principal_arns
+  transfer_acceleration_enabled = var.transfer_acceleration_enabled
+  bucket_key_enabled            = var.bucket_key_enabled
+  source_policy_documents       = var.source_policy_documents
+  sse_algorithm                 = var.sse_algorithm
+  kms_master_key_arn            = var.kms_master_key_arn
+  block_public_acls             = var.block_public_acls
+  block_public_policy           = var.block_public_policy
+  ignore_public_acls            = var.ignore_public_acls
+  restrict_public_buckets       = var.restrict_public_buckets
+  minimum_tls_version           = var.minimum_tls_version
 
-  name      = module.this.name
-  stage     = module.this.stage
-  namespace = module.this.namespace
+  access_key_enabled      = var.access_key_enabled
+  store_access_key_in_ssm = var.store_access_key_in_ssm
+  ssm_base_path           = "/${module.this.id}"
 
-  hostname           = local.domain.hostname
-  versioning_enabled = local.website.versioning_enabled
-  index_document     = local.website.index_document
-  error_document     = local.website.error_document
+  website_configuration            = var.website_configuration
+  cors_configuration               = var.cors_configuration
+  website_redirect_all_requests_to = var.website_redirect_all_requests_to
 
-  cors_allowed_headers = local.cors.allowed_headers
-  cors_allowed_methods = local.cors.allowed_methods
-  cors_allowed_origins = local.cors.allowed_origins
-  cors_max_age_seconds = local.cors.max_age_seconds
-
-  logs_expiration_days          = local.logs.expiration_days
-  logs_standard_transition_days = local.logs.standard_transition_days
-  logs_glacier_transition_days  = local.logs.glacier_transition_days
-
-  deployment_arns = {
-    (data.aws_iam_user.deployer.arn) = ["/*"]
-  }
-
-  force_destroy = local.force_destroy
-
-  tags = module.this.tags
-}
-
-output "context_id" {
-  value = module.this.id
-}
-
-output "context_name" {
-  value = module.this.name
+  context = module.this.context
 }
