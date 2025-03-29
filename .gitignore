@@ -28,7 +28,6 @@ Thumbs.db
 **/.terraform/*
 *.tfstate
 *.tfstate.*
-*.tfvars
 *.tfvars.json
 crash.log
 crash.*.log
@@ -38,4 +37,6 @@ override.tf.json
 *_override.tf.json
 .terraformrc
 terraform.rc
-.terraform.lock.hcl 
+.tfplan/*
+
+**secrets.*

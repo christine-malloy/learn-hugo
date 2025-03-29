@@ -19,7 +19,7 @@ module "amplify_app" {
   auto_branch_creation_config   = var.auto_branch_creation_config
   auto_branch_creation_patterns = var.auto_branch_creation_patterns
   basic_auth_credentials        = var.basic_auth_credentials
-  build_spec                    = var.build_spec
+  build_spec                    = local.build_spec
   enable_auto_branch_creation   = var.enable_auto_branch_creation
   enable_basic_auth             = var.enable_basic_auth
   enable_branch_auto_build      = var.enable_branch_auto_build
