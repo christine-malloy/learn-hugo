@@ -52,12 +52,12 @@ plan: validate workspace
 apply: workspace
 	@echo "Are you sure you want to apply changes? Type 'yes' to proceed."
 	@read -p "Enter 'yes' to confirm: " CONFIRM && [ "$$CONFIRM" = "yes" ] || exit 1
-	@cd $(TERRAFORM_DIR) && terraform apply ./../../.tfplan/$(WORKSPACE_NAME).tfplan
+	@cd $(TERRAFORM_DIR) && terraform apply --auto-approve ./../../.tfplan/$(WORKSPACE_NAME).tfplan
 
 destroy: workspace
 	@echo "DESTROY ALL RESOURCES IN WORKSPACE '$(WORKSPACE_NAME)'? Type 'yes' to proceed."
 	@read -p "Enter 'yes' to confirm: " CONFIRM && [ "$$CONFIRM" = "yes" ] || exit 1
-	@cd $(TERRAFORM_DIR) && terraform destroy
+	@cd $(TERRAFORM_DIR) && terraform destroy --auto-approve
 
 output:
 	@cd $(TERRAFORM_DIR) && terraform output
